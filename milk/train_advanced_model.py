@@ -73,8 +73,8 @@ print("\nXGBOOST ACCURACY:")
 print(xgb_accuracy)
 
 # SAVE MODELS
-joblib.dump(rf_model, "models/random_forest_model.pkl")
-joblib.dump(xgb_model, "models/xgboost_model.pkl")
-joblib.dump(scaler, "models/scaler.pkl")
+joblib.dump(rf_model, "models/milk/random_forest_model.pkl")
+joblib.dump(xgb_model, "models/milk/xgboost_model.pkl")
+joblib.dump(scaler, "models/milk/scaler.pkl")
 
 print("\nMODELS SAVED SUCCESSFULLY!")

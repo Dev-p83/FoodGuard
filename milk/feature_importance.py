@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 df = pd.read_csv("data/final_milk_dataset.csv")
 
 # Load trained model
-model = joblib.load("models/random_forest_model.pkl")
+model = joblib.load("models/milk/random_forest_model.pkl")
 
 # Features
 X = df.drop("Is_Adulterated", axis=1)

@@ -1,0 +1,14 @@
+Selected Features for Honey Adulteration Detection
+==================================================
+These 10 features were selected by consensus voting (5 methods):
+
+• Moisture
+• Sugar_Content
+• pH
+• Density
+• Moisture_Deficit
+• pH_Sweetness
+• Sugar_Moisture_Ratio
+• Conductivity_per_Sugar
+• Purity_Score
+• Density_Index

@@ -88,7 +88,7 @@ git clone https://github.com/yourusername/FoodGuard.git
 cd FoodGuard
 ```
 
-### Step 2: Create Virtual Environment (Recommended)
+### Step 2: Create Virtual Environment
 
 **Windows:**
 ```bash

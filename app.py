@@ -3,8 +3,15 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
-from honey_model import honey_detector
-from spices_model import spices_detector
+import sys
+import os
+
+# Add modules to path
+sys.path.append(os.path.dirname(__file__))
+
+# Import detectors from new locations
+from modules.honey.detector import honey_detector
+from modules.spices.detector import spices_detector
 # =========================================================
 # PAGE CONFIG
 # =========================================================

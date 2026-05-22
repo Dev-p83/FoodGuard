@@ -1,1 +1,43 @@
-venv
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+env/
+ENV/
+*.so
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Project specific - Large files (DON'T push to GitHub)
+*.pkl
+*.npy
+*.csv
+outputs/
+honey_eda_plots/
+
+# Model files (too large for GitHub)
+honey_best_model.pkl
+honey_standard_scaler.pkl
+honey_minmax_scaler.pkl
+honey_robust_scaler.pkl
+*.pkl
+
+# Data files (optional - if large)
+data/raw/*.csv
+data/processed/*.csv
+data/preprocessed/*.npy
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log

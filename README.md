@@ -1,5 +1,3 @@
-Here's a clean, accurate README for your FoodGuard project based on what you actually have:
-
 ```markdown
 # FoodGuard
 

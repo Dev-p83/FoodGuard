@@ -183,7 +183,7 @@ Contributions are welcome! Please follow these steps:
 
 ## Contact
 
-Project Link: [https://github.com/yourusername/FoodGuard](https://github.com/Dev-p83/FoodGuard)
+Project Link:(https://github.com/Dev-p83/FoodGuard)
 
 ---
 

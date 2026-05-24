@@ -77,22 +77,147 @@ div.stButton > button:hover {
 """, unsafe_allow_html=True)
 
 # =========================================================
-# SIDEBAR
+# FIXED NAVIGATION - 
 # =========================================================
 
-st.sidebar.title("🛡️ FoodGuard AI")
+import streamlit as st
 
-page = st.sidebar.radio(
-    "Navigation",
-    [
-        "Dashboard",
-        "Milk Analysis",
-        "Honey Analysis",
-        "Spices Analysis",
-        "Supply Chain",
-        "About"
-    ]
-)
+st.set_page_config(page_title="FoodGuard AI", page_icon="🛡️", layout="wide")
+
+# Hide sidebar and add styling
+st.markdown("""
+<style>
+/* Hide sidebar */
+[data-testid="stSidebar"], [data-testid="stSidebarNav"] {
+    display: none;
+}
+
+/* Full width */
+.main .block-container {
+    padding-top: 0.5rem;
+    max-width: 100%;
+}
+
+/* Top bar */
+.top-bar-fixed {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    padding: 0.8rem 2rem;
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #334155;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-fixed {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.logo-icon-fixed {
+    font-size: 2rem;
+}
+
+.logo-text-fixed {
+    font-size: 1.4rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #22c55e, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Button styles */
+.stButton button {
+    transition: all 0.3s ease !important;
+    font-weight: 500 !important;
+}
+
+/* Inactive button - Dark gray */
+.stButton button[kind="secondary"] {
+    background: #334155 !important;
+    color: #94a3b8 !important;
+    border: none !important;
+}
+
+/* Inactive button hover */
+.stButton button[kind="secondary"]:hover {
+    background: #22c55e !important;
+    color: white !important;
+    transform: scale(1.02);
+}
+
+/* Active button - STAYS GREEN (not just on hover) */
+.stButton button[kind="primary"] {
+    background: linear-gradient(90deg, #22c55e, #16a34a) !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 0 10px rgba(34,197,94,0.3) !important;
+}
+
+/* Divider */
+.custom-divider {
+    margin: 0.5rem 0 2rem 0;
+    border-top: 1px solid #334155;
+}
+</style>
+
+<div class="top-bar-fixed">
+    <div class="logo-fixed">
+        <div class="logo-icon-fixed">🛡️</div>
+        <div class="logo-text-fixed">FoodGuard AI</div>
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
+# Initialize session state
+if 'page' not in st.session_state:
+    st.session_state.page = 'Dashboard'
+
+# Navigation buttons
+col1, col2, col3, col4, col5, col6 = st.columns([1, 0.6, 0.7, 0.8, 0.8, 0.7])
+
+with col1:
+    is_active = (st.session_state.page == 'Dashboard')
+    if st.button("🏠 Home", use_container_width=True, type="primary" if is_active else "secondary"):
+        st.session_state.page = 'Dashboard'
+        st.rerun()
+
+with col2:
+    is_active = (st.session_state.page == 'Milk Analysis')
+    if st.button("🥛 Milk", use_container_width=True, type="primary" if is_active else "secondary"):
+        st.session_state.page = 'Milk Analysis'
+        st.rerun()
+
+with col3:
+    is_active = (st.session_state.page == 'Honey Analysis')
+    if st.button("🍯 Honey", use_container_width=True, type="primary" if is_active else "secondary"):
+        st.session_state.page = 'Honey Analysis'
+        st.rerun()
+
+with col4:
+    is_active = (st.session_state.page == 'Spices Analysis')
+    if st.button("🌶️ Spices", use_container_width=True, type="primary" if is_active else "secondary"):
+        st.session_state.page = 'Spices Analysis'
+        st.rerun()
+
+with col5:
+    is_active = (st.session_state.page == 'Supply Chain')
+    if st.button("🚚 Supply", use_container_width=True, type="primary" if is_active else "secondary"):
+        st.session_state.page = 'Supply Chain'
+        st.rerun()
+
+with col6:
+    is_active = (st.session_state.page == 'About')
+    if st.button("📋 About", use_container_width=True, type="primary" if is_active else "secondary"):
+        st.session_state.page = 'About'
+        st.rerun()
+
+st.markdown('<div class="custom-divider"></div>', unsafe_allow_html=True)
+
+# Set page variable
+page = st.session_state.page
 
 # =========================================================
 # DASHBOARD - PROFESSIONAL UI DESIGNER VERSION
